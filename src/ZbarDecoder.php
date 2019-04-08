@@ -22,11 +22,6 @@ class ZbarDecoder
     private $result;
 
     /**
-     * @var Process
-     */
-    private $processBuilder;
-
-    /**
      * @param array          $config
      */
     public function __construct(array $config = [])
@@ -34,7 +29,6 @@ class ZbarDecoder
         if (isset($config['path'])) {
             $this->setPath($config['path']);
         }
-//        $this->processBuilder = null === $processBuilder ? new ProcessBuilder() : $processBuilder;
     }
 
     /**
@@ -112,7 +106,6 @@ class ZbarDecoder
         $process->enableOutput();
 
         return $process;
-//        $this->processBuilder->setArguments(['-D', '--xml', '-q', $this->getFilePath()])->enableOutput();
     }
 
     /**
